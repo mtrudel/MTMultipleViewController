@@ -98,8 +98,13 @@
 
 - (void)makeViewControllerVisible:(UIViewController *)newController {
   self.navigationItem.title = newController.navigationItem.title;
+  self.navigationItem.prompt = newController.navigationItem.prompt;
   self.navigationItem.backBarButtonItem = newController.navigationItem.backBarButtonItem;
+  self.navigationItem.hidesBackButton = newController.navigationItem.hidesBackButton;
+  self.navigationItem.leftItemsSupplementBackButton = newController.navigationItem.leftItemsSupplementBackButton;
+  self.navigationItem.leftBarButtonItems = newController.navigationItem.leftBarButtonItems;
   self.navigationItem.leftBarButtonItem = newController.navigationItem.leftBarButtonItem;
+  self.navigationItem.rightBarButtonItems = newController.navigationItem.rightBarButtonItems;
   self.navigationItem.rightBarButtonItem = newController.navigationItem.rightBarButtonItem;
 
   [self addChildViewController:newController];
