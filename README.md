@@ -10,6 +10,23 @@ It does some cool things:
 * Your child view controllers don't require any modification to be used with this container
 * Because MTMultipleViewController uses proper container view controller APIs, all relevant rotation, memory, and view lifecycle messages automatically get passed through to the selected child
 
+It should be said that generally, the HIGs dictate that segmented controls in the
+title of a view (such as MTMultipleViewController displays) are intended to
+select between different filters views into a single set of data (for example, see
+the 'Recents' tab in Phone.app, or the 'Connect' tab in the official
+Twitter.app). Such filtered views are quite easy to do using a combined
+UITableViewController subclass, and if you're using MTMultipleViewController to
+realize such a design you're quite possibly doing it wrong. On the other end of
+the spectrum, using MTMultipleViewController to toggle between two or more
+obviously different view controllers is an equally bad idea; where
+MTMultipleViewController shines is in the grey area in between these two
+extremes. There should be a natural and complementary relationship between the
+data presented by views embedded within an MTMultipleViewController; the data in 
+each of the child views should be thematically similar to one another so as to 
+make sense to the user, but different enough so as to require separate view 
+controllers. If that describes your use case, then MTMultipleViewController may 
+well be for you.
+
 ## Supported Platforms
 
 iOS 5.0 is a minimum; any release since then is supported. ARC is required (if you have a need
@@ -49,23 +66,6 @@ sounds weak, but is actually what you want in this situation.
 Note that the UIBarButtonItem and prompt added above are purely fictional and
 would never be done like this in real code. The above only serves to demonstrate
 what the UI looks like. 
-
-It should be said that generally, the HIGs dictate that segmented controls in the
-title of a view (such as MTMultipleViewController displays) are intended to
-select between different filters views into a single set of data (for example, see
-the 'Recents' tab in Phone.app, or the 'Connect' tab in the official
-Twitter.app). Such filtered views are quite easy to do using a combined
-UITableViewController subclass, and if you're using MTMultipleViewController to
-realize such a design you're quite possibly doing it wrong. On the other end of
-the spectrum, using MTMultipleViewController to toggle between two or more
-obviously different view controllers is an equally bad idea; where
-MTMultipleViewController shines is in the grey area in between these two
-extremes. There should be a natural and complementary relationship between the
-data presented by views embedded within an MTMultipleViewController; the data in 
-each of the child views should be thematically similar to one another so as to 
-make sense to the user, but different enough so as to require separate view 
-controllers. If that describes your use case, then MTMultipleViewController may 
-well be for you.
 
 ## Contributing
 
