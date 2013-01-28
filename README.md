@@ -13,7 +13,7 @@ It does some cool things:
 ## Supported Platforms
 
 iOS 5.0 is a minimum; any release since then is supported. ARC is required (if you have a need
-for this project to not require ARC, just let me know and I'll fix you up;
+for this project to not require ARC, let me know and I'll fix you up;
 I just haven't has a need for it yet).
 
 ## Usage
@@ -41,9 +41,14 @@ The previous code will give you something that looks like this:
 ![Controller One](http://mat.geeky.net/static/MTMultipleViewControllerOne.png)
 ![Controller Two](http://mat.geeky.net/static/MTMultipleViewControllerTwo.png)
 
-(Note that the UIBarButtonItem and prompt added above are purely fictional and
+You can have any number of child view controllers, but I'd try very hard not to 
+exceed three (or two if you have left and right bar button items). Transitions 
+between child view controllers aren't animated (it's just a toggle), which
+sounds weak, but is actually what you want in this situation. 
+
+Note that the UIBarButtonItem and prompt added above are purely fictional and
 would never be done like this in real code. The above only serves to demonstrate
-what the UI looks like). 
+what the UI looks like. 
 
 It should be said that generally, the HIGs dictate that segmented controls in the
 title of a view (such as MTMultipleViewController displays) are intended to
