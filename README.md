@@ -61,7 +61,11 @@ the spectrum, using MTMultipleViewController to toggle between two or more
 obviously different view controllers is an equally bad idea; where
 MTMultipleViewController shines is in the grey area in between these two
 extremes. There should be a natural and complementary relationship between the
-data presented by views embedded within an MTMultipleViewController.
+data presented by views embedded within an MTMultipleViewController; the data in 
+each of the child views should be thematically similar to one another so as to 
+make sense to the user, but different enough so as to require separate view 
+controllers. If that describes your use case, then MTMultipleViewController may 
+well be for you.
 
 ## Contributing
 
