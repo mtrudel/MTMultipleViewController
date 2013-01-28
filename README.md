@@ -1,30 +1,30 @@
 # MTMultipleViewController
 
-MTMultipleViewController is a container view controller that allows the
-selection of child views based on a UISegmentedControl in the navigation bar.
+`MTMultipleViewController` is a container view controller that allows the
+selection of child views based on a `UISegmentedControl` in the navigation bar.
 
 It does some cool things:
 
-* The navigation bar all of its properties (leftBarButtonItem, rightBarButtonItem, etc) from the currently selected child UIViewController
-* Titles for the segmented control are taken from the child view controllers' navigationItem.title properties
+* The navigation bar all of its properties (`leftBarButtonItem`, `rightBarButtonItem`, etc) from the currently selected child `UIViewController`
+* Titles for the segmented control are taken from the child view controllers' `navigationItem.title` properties
 * Your child view controllers don't require any modification to be used with this container
-* Because MTMultipleViewController uses proper container view controller APIs, all relevant rotation, memory, and view lifecycle messages automatically get passed through to the selected child
+* Because `MTMultipleViewController` uses proper container view controller APIs, all relevant rotation, memory, and view lifecycle messages automatically get passed through to the selected child
 
 It should be said that generally, the HIGs dictate that segmented controls in the
-title of a view (such as MTMultipleViewController displays) are intended to
+title of a view (such as `MTMultipleViewController` displays) are intended to
 select between different filters views into a single set of data (for example, see
 the 'Recents' tab in Phone.app, or the 'Connect' tab in the official
-Twitter.app). Such filtered views are quite easy to do using a combined
-UITableViewController subclass, and if you're using MTMultipleViewController to
+Twitter.app). Such filtered views are quite easy to do using a single
+`UITableViewController` subclass, and if you're using `MTMultipleViewController` to
 realize such a design you're quite possibly doing it wrong. On the other end of
-the spectrum, using MTMultipleViewController to toggle between two or more
+the spectrum, using `MTMultipleViewController` to toggle between two or more
 obviously different view controllers is an equally bad idea; where
-MTMultipleViewController shines is in the grey area in between these two
+`MTMultipleViewController` shines is in the grey area in between these two
 extremes. There should be a natural and complementary relationship between the
-data presented by views embedded within an MTMultipleViewController; the data in 
+data presented by views embedded within an `MTMultipleViewController`; the data in 
 each of the child views should be thematically similar to one another so as to 
 make sense to the user, but different enough so as to require separate view 
-controllers. If that describes your use case, then MTMultipleViewController may 
+controllers. If that describes your use case, then `MTMultipleViewController` may 
 well be for you.
 
 ## Supported Platforms
@@ -35,7 +35,7 @@ I just haven't has a need for it yet).
 
 ## Usage
 
-Using MTMultipleViewController is easy. Initialization looks very similar to
+Using `MTMultipleViewController` is easy. Initialization looks very similar to
 that of any of the system view controllers:
 
 ```
@@ -60,12 +60,16 @@ The previous code will give you something that looks like this:
 
 You can have any number of child view controllers, but I'd try very hard not to 
 exceed three (or two if you have left and right bar button items). Transitions 
-between child view controllers aren't animated (it's just a toggle), which
+between child view controllers aren't animated (except in the case of views controllers with `prompt`s), which
 sounds weak, but is actually what you want in this situation. 
 
-Note that the UIBarButtonItem and prompt added above are purely fictional and
+Note that the `UIBarButtonItem` and `prompt` added above are purely fictional and
 would never be done like this in real code. The above only serves to demonstrate
 what the UI looks like. 
+
+The relevant hooks are also in place to allow the placement of `MTMultipleViewController`
+instances in nib/storyboard files (though you still have to insert child views 
+programmatically; as with all non-system view containers).
 
 ## Contributing
 
