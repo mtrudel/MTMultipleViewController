@@ -8,7 +8,7 @@
 #import "MTMultipleViewController.h"
 
 @interface MTMultipleViewController ()
-@property(nonatomic, strong) NSMutableArray *viewControllers;
+@property(nonatomic, strong) NSMutableArray *internalViewControllers;
 - (void)makeViewControllerVisible:(UIViewController *)newController;
 - (void)makeViewControllerInvisible:(UIViewController *)oldController;
 @end
@@ -25,7 +25,7 @@
  */
 - (id)initWithChildViewControllers:(NSArray *)controllers {
   if (self = [super initWithNibName:nil bundle:nil]) {
-    self.viewControllers = [NSMutableArray arrayWithCapacity:controllers.count];
+    self.internalViewControllers = [NSMutableArray arrayWithCapacity:controllers.count];
     for (UIViewController *controller in controllers) {
       [self addViewController:controller];
     }
@@ -35,7 +35,7 @@
 
 
 - (void)awakeFromNib {
-  self.viewControllers = [NSMutableArray array];
+  self.internalViewControllers = [NSMutableArray array];
 }
 
 
@@ -60,6 +60,9 @@
 
 #pragma mark - Public access methods
 
+- (NSArray *)viewControllers {
+  return [self.internalViewControllers copy];
+}
 
 - (void)addViewController:(UIViewController *)controller {
   [self insertViewController:controller atIndex:self.viewControllers.count];
@@ -67,7 +70,7 @@
 
 
 - (void)insertViewController:(UIViewController *)controller atIndex:(NSUInteger)index {
-  [self.viewControllers insertObject:controller atIndex:index];
+  [self.internalViewControllers insertObject:controller atIndex:index];
   [((UISegmentedControl *)self.navigationItem.titleView) insertSegmentWithTitle:[[controller navigationItem] title] atIndex:index animated:YES];
 
   if (self.viewControllers.count == 1) {

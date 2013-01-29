@@ -9,6 +9,7 @@
 
 @interface MTMultipleViewController : UIViewController
 @property(nonatomic) NSUInteger selectedIndex;
+@property(nonatomic, readonly) NSArray *viewControllers;
 
 - (id)initWithChildViewControllers:(NSArray *)controllers;
 
