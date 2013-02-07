@@ -100,16 +100,33 @@
 
 
 - (void)makeViewControllerVisible:(UIViewController *)newController {
-  self.navigationItem.title = newController.navigationItem.title;
-  self.navigationItem.prompt = newController.navigationItem.prompt;
-  self.navigationItem.backBarButtonItem = newController.navigationItem.backBarButtonItem;
-  self.navigationItem.hidesBackButton = newController.navigationItem.hidesBackButton;
-  self.navigationItem.leftItemsSupplementBackButton = newController.navigationItem.leftItemsSupplementBackButton;
-  self.navigationItem.leftBarButtonItems = newController.navigationItem.leftBarButtonItems;
-  self.navigationItem.leftBarButtonItem = newController.navigationItem.leftBarButtonItem;
-  self.navigationItem.rightBarButtonItems = newController.navigationItem.rightBarButtonItems;
-  self.navigationItem.rightBarButtonItem = newController.navigationItem.rightBarButtonItem;
-
+  if (!self.lockedTitle) {
+    self.navigationItem.title = newController.navigationItem.title;
+  }
+  if (!self.lockedPrompt) {
+    self.navigationItem.prompt = newController.navigationItem.prompt;
+  }
+  if (!self.lockedBackBarButtonItem) {
+    self.navigationItem.backBarButtonItem = newController.navigationItem.backBarButtonItem;
+  }
+  if (!self.lockedHidesBackButton) {
+    self.navigationItem.hidesBackButton = newController.navigationItem.hidesBackButton;
+  }
+  if (!self.lockedLeftItemsSupplementBackButton) {
+    self.navigationItem.leftItemsSupplementBackButton = newController.navigationItem.leftItemsSupplementBackButton;
+  }
+  if (!self.lockedLeftBarButtonItems && newController.navigationItem.leftBarButtonItems) {
+    self.navigationItem.leftBarButtonItems = newController.navigationItem.leftBarButtonItems;
+  }
+  if (!self.lockedLeftBarButtonItem) {
+    self.navigationItem.leftBarButtonItem = newController.navigationItem.leftBarButtonItem;
+  }
+  if (!self.lockedRightBarButtonItems && newController.navigationItem.rightBarButtonItems) {
+    self.navigationItem.rightBarButtonItems = newController.navigationItem.rightBarButtonItems;
+  }
+  if (!self.lockedRightBarButtonItem) {
+    self.navigationItem.rightBarButtonItem = newController.navigationItem.rightBarButtonItem;
+  }
   [self addChildViewController:newController];
   newController.view.frame = self.view.bounds;
   [self.view addSubview:newController.view];

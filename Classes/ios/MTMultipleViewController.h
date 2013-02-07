@@ -11,6 +11,16 @@
 @property(nonatomic) NSUInteger selectedIndex;
 @property(nonatomic, readonly) NSArray *viewControllers;
 
+@property(nonatomic) BOOL lockedTitle;
+@property(nonatomic) BOOL lockedPrompt;
+@property(nonatomic) BOOL lockedBackBarButtonItem;
+@property(nonatomic) BOOL lockedHidesBackButton;
+@property(nonatomic) BOOL lockedLeftItemsSupplementBackButton;
+@property(nonatomic) BOOL lockedLeftBarButtonItems;
+@property(nonatomic) BOOL lockedLeftBarButtonItem;
+@property(nonatomic) BOOL lockedRightBarButtonItems;
+@property(nonatomic) BOOL lockedRightBarButtonItem;
+
 - (id)initWithChildViewControllers:(NSArray *)controllers;
 
 - (void)addViewController:(UIViewController *)controller;
