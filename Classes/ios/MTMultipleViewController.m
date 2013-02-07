@@ -2,7 +2,7 @@
 //  MTMultipleViewController.m
 //
 //  Created by Mat Trudel on 2013-01-23.
-//  Copyright (c) 2013 MTMultipleViewController. All rights reserved.
+//  Copyright (c) 2013 Mat Trudel. All rights reserved.
 //
 
 #import "MTMultipleViewController.h"
