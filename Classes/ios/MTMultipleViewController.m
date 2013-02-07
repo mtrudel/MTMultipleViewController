@@ -9,8 +9,6 @@
 
 @interface MTMultipleViewController ()
 @property(nonatomic, strong) NSMutableArray *internalViewControllers;
-- (void)makeViewControllerVisible:(UIViewController *)newController;
-- (void)makeViewControllerInvisible:(UIViewController *)oldController;
 @end
 
 
