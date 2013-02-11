@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
                     upshot of all of this is that your child view controllers don't require any modification to be used with this container.
                    DESC
   s.homepage     = "https://github.com/mtrudel/MTMultipleViewController"
-  s.license      = 'BSD (LICENSE)'
+  s.license      = 'MIT'
   s.author       = { "Mat Trudel" => "mat@geeky.net" }
   s.source       = { :git => "https://github.com/mtrudel/MTMultipleViewController.git", :tag => "0.2.0" }
   s.platform     = :ios, '5.0'
