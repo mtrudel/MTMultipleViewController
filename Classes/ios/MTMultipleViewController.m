@@ -32,8 +32,11 @@
 }
 
 
-- (void)awakeFromNib {
-  self.internalViewControllers = [NSMutableArray array];
+- (id)initWithCoder:(NSCoder *)aDecoder {
+  if (self = [super initWithCoder:aDecoder]) {
+    self.internalViewControllers = [NSMutableArray array];
+  }
+  return self;
 }
 
 
