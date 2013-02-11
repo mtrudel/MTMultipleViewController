@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.homepage     = "https://github.com/mtrudel/MTMultipleViewController"
   s.license      = 'MIT'
   s.author       = { "Mat Trudel" => "mat@geeky.net" }
-  s.source       = { :git => "https://github.com/mtrudel/MTMultipleViewController.git", :tag => "0.2.0" }
+  s.source       = { :git => "https://github.com/mtrudel/MTMultipleViewController.git", :tag => "0.3.0" }
   s.platform     = :ios, '5.0'
   s.source_files = 'Classes', 'Classes/**/*.{h,m}'
   s.requires_arc = true

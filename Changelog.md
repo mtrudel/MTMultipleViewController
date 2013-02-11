@@ -1,3 +1,10 @@
+## 0.3.0
+
+* Change license to MIT
+* Add methods to lock navigationItem properties from being changed by child view
+  controllers
+* Minor nib-related lifecycle refactor
+
 ## 0.2.0
 
 * Expose a readonly array of contained view controllers
