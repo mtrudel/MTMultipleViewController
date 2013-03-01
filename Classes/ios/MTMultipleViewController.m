@@ -79,12 +79,13 @@
 
 - (void)setSelectedIndex:(NSUInteger)selectedIndex {
   if (selectedIndex != _selectedIndex) {
-    ((UISegmentedControl *)self.navigationItem.titleView).selectedSegmentIndex = selectedIndex;
-
     [self makeViewControllerVisible:self.viewControllers[selectedIndex]];
     [self makeViewControllerInvisible:self.viewControllers[_selectedIndex]];
 
     _selectedIndex = selectedIndex;
+
+    ((UISegmentedControl *)self.navigationItem.titleView).selectedSegmentIndex = selectedIndex;
+
     if ([self.delegate respondsToSelector:@selector(multipleViewController:didChangeSelectedViewControllerIndex:)]) {
       [self.delegate multipleViewController:self didChangeSelectedViewControllerIndex:selectedIndex];
     }
