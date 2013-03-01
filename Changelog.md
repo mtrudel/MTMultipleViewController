@@ -1,3 +1,9 @@
+## 0.4.0
+
+* Add a delegate protocol
+* Change the order that selected index actions are taken internally. May break
+  some existing usage patterns
+
 ## 0.3.0
 
 * Change license to MIT
