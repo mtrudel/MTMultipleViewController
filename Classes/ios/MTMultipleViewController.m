@@ -26,6 +26,7 @@
     self.internalViewControllers = [NSMutableArray arrayWithCapacity:controllers.count];
     for (UIViewController *controller in controllers) {
       [self addViewController:controller];
+      self.selectedIndex = 0;
     }
   }
   return self;
@@ -73,10 +74,6 @@
 - (void)insertViewController:(UIViewController *)controller atIndex:(NSUInteger)index {
   [self.internalViewControllers insertObject:controller atIndex:index];
   [((UISegmentedControl *)self.navigationItem.titleView) insertSegmentWithTitle:[[controller navigationItem] title] atIndex:index animated:YES];
-
-  if (self.viewControllers.count == 1) {
-    self.selectedIndex = 0;
-  }
 }
 
 
