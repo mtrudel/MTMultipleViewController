@@ -7,9 +7,12 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol MTMultipleViewControllerDelegate;
+
 @interface MTMultipleViewController : UIViewController
 @property(nonatomic) NSUInteger selectedIndex;
 @property(nonatomic, readonly) NSArray *viewControllers;
+@property(nonatomic,weak) id<MTMultipleViewControllerDelegate> delegate;
 
 @property(nonatomic) BOOL lockedTitle;
 @property(nonatomic) BOOL lockedPrompt;
@@ -25,5 +28,13 @@
 
 - (void)addViewController:(UIViewController *)controller;
 - (void)insertViewController:(UIViewController *)controller atIndex:(NSUInteger)index;
+
+@end
+
+@protocol MTMultipleViewControllerDelegate <NSObject>
+
+@optional
+
+- (void)multipleViewController:(MTMultipleViewController *)controller didChangeSelectedViewControllerIndex:(NSUInteger)newIndex;
 
 @end

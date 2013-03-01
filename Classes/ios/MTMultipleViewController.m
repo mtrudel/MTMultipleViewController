@@ -88,6 +88,9 @@
     [self makeViewControllerInvisible:self.viewControllers[_selectedIndex]];
 
     _selectedIndex = selectedIndex;
+    if ([self.delegate respondsToSelector:@selector(multipleViewController:didChangeSelectedViewControllerIndex:)]) {
+      [self.delegate multipleViewController:self didChangeSelectedViewControllerIndex:selectedIndex];
+    }
   }
 }
 
