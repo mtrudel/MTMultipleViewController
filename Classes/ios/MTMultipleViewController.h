@@ -24,8 +24,6 @@
 @property(nonatomic) BOOL lockedRightBarButtonItems;
 @property(nonatomic) BOOL lockedRightBarButtonItem;
 
-- (id)initWithChildViewControllers:(NSArray *)controllers;
-
 - (void)addViewController:(UIViewController *)controller;
 - (void)insertViewController:(UIViewController *)controller atIndex:(NSUInteger)index;
 
