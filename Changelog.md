@@ -1,3 +1,12 @@
+## 0.4.2
+
+* Better handling of view controller containment lifecycles
+* Minor appearance fixes
+
+## 0.4.1
+
+* Doc updates
+
 ## 0.4.0
 
 * Add a delegate protocol
