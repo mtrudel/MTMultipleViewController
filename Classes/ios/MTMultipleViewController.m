@@ -64,7 +64,7 @@
 - (void)insertViewController:(UIViewController *)controller atIndex:(NSUInteger)index {
   [self.internalViewControllers insertObject:controller atIndex:index];
   [self addChildViewController:controller];
-  [((UISegmentedControl *)self.navigationItem.titleView) insertSegmentWithTitle:[[controller navigationItem] title] atIndex:index animated:YES];
+  [((UISegmentedControl *)self.navigationItem.titleView) insertSegmentWithTitle:[[controller navigationItem] title] atIndex:index animated:NO];
   if (((UISegmentedControl *)self.navigationItem.titleView).selectedSegmentIndex == -1) {
     ((UISegmentedControl *)self.navigationItem.titleView).selectedSegmentIndex = 0;
   }
