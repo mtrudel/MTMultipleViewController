@@ -1,3 +1,7 @@
+## 1.0.0
+
+* None -- promoting 0.4.2 to 1.0.0 unchanged
+
 ## 0.4.2
 
 * Better handling of view controller containment lifecycles

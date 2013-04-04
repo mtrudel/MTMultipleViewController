@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "MTMultipleViewController"
-  s.version      = "0.4.2"
+  s.version      = "1.0.0"
   s.summary      = "A container view controller that allows the selection of child views based on a UISegmentedControl in the navigation bar."
   s.description  = <<-DESC
                     A container view controller that allows the selection of child views based on a UISegmentedControl in the navigation bar. 
@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.homepage     = "https://github.com/mtrudel/MTMultipleViewController"
   s.license      = 'MIT'
   s.author       = { "Mat Trudel" => "mat@geeky.net" }
-  s.source       = { :git => "https://github.com/mtrudel/MTMultipleViewController.git", :tag => "0.4.2" }
+  s.source       = { :git => "https://github.com/mtrudel/MTMultipleViewController.git", :tag => "1.0.0" }
   s.platform     = :ios, '5.0'
   s.source_files = 'Classes', 'Classes/**/*.{h,m}'
   s.requires_arc = true
