@@ -1,3 +1,7 @@
+## 1.0.1
+
+* Removal of call to deprecated (and now effect-free) styling method
+
 ## 1.0.0
 
 * None -- promoting 0.4.2 to 1.0.0 unchanged
