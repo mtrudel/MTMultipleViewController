@@ -33,7 +33,6 @@
 - (void)setupInitialState {
   self.internalViewControllers = [NSMutableArray array];
   UISegmentedControl *titleView = [[UISegmentedControl alloc] initWithItems:[self.viewControllers valueForKeyPath:@"navigationItem.title"]];
-  titleView.segmentedControlStyle = UISegmentedControlStyleBar;
   [titleView addTarget:self action:@selector(selectedButtonChanged:) forControlEvents:UIControlEventValueChanged];
   self.navigationItem.titleView = titleView;
 }
