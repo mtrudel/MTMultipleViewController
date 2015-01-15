@@ -41,13 +41,9 @@
 
 
 - (void)viewDidLoad {
+  [super viewDidLoad];
   [self makeViewControllerVisible:self.viewControllers[self.selectedIndex]];
 }
-
-- (void)viewDidUnload {
-  [self makeViewControllerInvisible:self.viewControllers[self.selectedIndex]];
-}
-
 
 #pragma mark - Public access methods
 
